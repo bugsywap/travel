@@ -11,10 +11,9 @@ export function Header() {
 	const scrolled = useScroll(10);
 
 	const links = [
-		{ label: 'Home', href: '/' },
-		{ label: 'Destinations', href: '/services#tours' },
-		{ label: 'Services', href: '/services' },
 		{ label: 'About', href: '/about' },
+		{ label: 'Services', href: '/services' },
+		{ label: 'Contact', href: '/contact' },
 	];
 
 	React.useEffect(() => {
