@@ -1,0 +1,569 @@
+﻿
+> travel-agency@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.1 (Turbopack)
+
+  Creating an optimized production build ...
+node.exe : 
+At C:\nvm4w\nodejs\npm.ps1:29 
+char:3
++   & $NODE_EXE $NPM_CLI_JS 
+$args
++   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: (:String)   
+  [], RemoteException
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+> Build error occurred
+Error: Turbopack build failed 
+with 8 errors:
+./src/app/about/page.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/about/page.css 
+[Client Component Browser]
+    ./src/app/about/page.tsx 
+[Server Component]
+
+
+./src/app/booking/page.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    
+./src/app/booking/page.css 
+[Client Component Browser]
+    
+./src/app/booking/page.tsx 
+[Client Component Browser]
+    
+./src/app/booking/page.tsx 
+[Server Component]
+
+
+./src/app/contact/page.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    
+./src/app/contact/page.css 
+[Client Component Browser]
+    
+./src/app/contact/page.tsx 
+[Client Component Browser]
+    
+./src/app/contact/page.tsx 
+[Server Component]
+
+
+./src/app/globals.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css 
+[Client Component Browser]
+    ./src/app/layout.tsx 
+[Server Component]
+
+
+./src/app/page.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/page.css 
+[Client Component Browser]
+    ./src/app/page.tsx 
+[Server Component]
+
+
+./src/app/services/page.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    
+./src/app/services/page.css 
+[Client Component Browser]
+    
+./src/app/services/page.tsx 
+[Server Component]
+
+
+./src/components/Card.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    ./src/components/Card.css 
+[Client Component Browser]
+    ./src/components/Card.tsx 
+[Server Component]
+    ./src/app/page.tsx 
+[Server Component]
+
+
+./src/components/Footer.css
+Error evaluating Node.js code
+Error: It looks like you're 
+trying to use `tailwindcss` 
+directly as a PostCSS plugin. 
+The PostCSS plugin has moved 
+to a separate package, so to 
+continue using Tailwind CSS 
+with PostCSS you'll need to 
+install 
+`@tailwindcss/postcss` and 
+update your PostCSS 
+configuration.
+    [at at (D:\antigravity-fil
+es\travel-agency\node_modules\
+tailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20]
+    [at <anonymous>]
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35]
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26]
+    [at process.processTicksAn
+dRejections (node:internal/pro
+cess/task_queues:105:5)]
+
+Import trace:
+  Client Component Browser:
+    
+./src/components/Footer.css 
+[Client Component Browser]
+    
+./src/components/Footer.tsx 
+[Server Component]
+    ./src/app/layout.tsx 
+[Server Component]
+
+
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
+    at pluginFactory (turbopac
+k:///[turbopack-node]/transfor
+ms/postcss.ts:56:14) [D:\antig
+ravity-files\travel-agency\.ne
+xt\build\chunks\[root-of-the-s
+erver]__0d-m0h0._.js:140:20])
+    at map (turbopack:///[turb
+opack-node]/transforms/postcss
+.ts:43:33) [D:\antigravity-fil
+es\travel-agency\.next\build\c
+hunks\[root-of-the-server]__0d
+-m0h0._.js:130:35])
+    at init (turbopack:///[tur
+bopack-node]/child_process/eva
+luate.ts:74:20) [D:\antigravit
+y-files\travel-agency\.next\bu
+ild\chunks\[root-of-the-server
+]__0ubbtyl._.js:429:26])
