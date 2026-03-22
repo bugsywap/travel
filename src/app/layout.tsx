@@ -15,11 +15,41 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cerebroworkforce.com'),
   title: {
     template: "%s | Cerebro Workforce Solutions",
     default: "Cerebro Workforce Solutions | Bridging Business and Professionals",
   },
   description: "Cerebro Workforce Solutions connects top-tier professional talent with world-class organizations. Specialized recruitment for Tech, Healthcare, Finance, and Engineering.",
+  keywords: ["recruitment", "headhunting", "executive search", "staffing solutions", "workforce management", "hiring", "career matchmaking"],
+  authors: [{ name: "Cerebro Team" }],
+  creator: "Cerebro Workforce Solutions",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://cerebroworkforce.com",
+    siteName: "Cerebro Workforce Solutions",
+    title: "Cerebro Workforce Solutions | Elite Recruitment Services",
+    description: "Connecting world-class organizations with elite professional talent. Expert recruitment in Tech, Healthcare, and Finance.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cerebro Workforce Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cerebro Workforce Solutions | Elite Recruitment",
+    description: "Bridging the gap between visionary businesses and top-tier professionals.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
