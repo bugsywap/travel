@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MapPin, Star, Plane, Compass, Globe, ArrowRight, Check } from 'lucide-react';
-import Card from '@/components/Card';
-import { Feature } from '@/components/ui/feature-section-with-bento-grid';
-import './page.css';
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Users, Briefcase, BarChart, UserPlus, Target } from 'lucide-react';
+import { Feature } from "@/components/ui/feature-section-with-bento-grid";
+import Link from 'next/link';
 
 export default function Home() {
   const fadeUpVariant = {
@@ -16,215 +15,220 @@ export default function Home() {
 
   const staggerContainer = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
   };
 
   return (
-    <div className="min-h-screen bg-secondary selection:bg-accent/20 selection:text-accent">
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-[100svh] flex items-center pt-32 pb-20 overflow-hidden bg-[#f8fafc]">
-        {/* Soft background aesthetic for Hero */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-50 rounded-full blur-[120px] opacity-70 translate-x-1/3 -translate-y-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[100px] opacity-60 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
-
+    <main className="min-h-screen selection:bg-accent/20 selection:text-accent overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="container px-6 mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-            
-            {/* Left Column: Text */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="max-w-2xl"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent font-medium text-sm mb-6 border border-accent/20 shadow-sm backdrop-blur-sm">
-                <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-                Voted #1 Travel Agency 2026
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Hero Content */}
+            <motion.div initial="hidden" animate="visible" variants={fadeUpVariant} className="flex flex-col items-start gap-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-100 rounded-full shadow-sm text-sm font-semibold text-slate-600">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                Voted #1 Recruitment Agency 2026
               </div>
-              <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-black tracking-tighter text-slate-900 leading-[1.1] mb-6 font-heading">
-                Explore The <br />
-                <span className="text-accent">Unseen World.</span>
+
+              <h1 className="text-5xl lg:text-7xl font-black tracking-tight text-slate-900 leading-tight font-heading">
+                Bridging <br />
+                <span className="block mt-2 text-accent underline decoration-slate-200 underline-offset-8">
+                  Professionals.
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-500 mb-8 max-w-lg leading-relaxed">
-                Discover handpicked destinations, luxury stays, and exclusive experiences curated just for you. Your ultimate journey begins here.
+
+              <p className="text-lg text-slate-500 leading-relaxed max-w-lg font-medium">
+                Cerebro Workforce Solutions connects elite talent with world-class organizations. We specialize in finding the perfect fit for specialized industry sectors.
               </p>
-              
-              <div className="flex flex-col sm:flex-row items-center gap-4">
-                <Link href="/booking" className="w-full sm:w-auto px-8 py-4 rounded-full bg-accent text-white font-bold hover:bg-accent-hover transition-all shadow-lg shadow-accent/25 flex items-center justify-center gap-2 group text-lg">
-                  Start Planning <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+
+              <div className="flex flex-wrap gap-4 mt-2">
+                <Link href="/booking" className="px-8 py-5 bg-accent hover:bg-accent-hover text-white font-black rounded-full transition-all shadow-xl shadow-accent/20 flex items-center gap-2 group text-lg">
+                  Book Appointment <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/services" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-slate-700 font-bold hover:bg-slate-50 transition-all border border-slate-200 shadow-sm flex items-center justify-center text-lg">
-                  Explore Destinations
+                <Link href="/services" className="px-8 py-5 bg-white border border-slate-100 text-slate-900 font-bold rounded-full transition-all hover:bg-slate-50 shadow-md text-lg">
+                  Explore Solutions
                 </Link>
               </div>
-              
-              <div className="mt-12 flex items-center gap-6 text-sm font-semibold text-slate-500 uppercase tracking-wider">
-                <div className="flex items-center gap-2"><Check size={16} className="text-accent" /> Custom Itineraries</div>
-                <div className="flex items-center gap-2"><Check size={16} className="text-accent" /> 24/7 Support</div>
+
+              <div className="flex items-center gap-8 pt-6">
+                <div className="flex flex-col">
+                  <span className="text-2xl font-black text-slate-900">5,000+</span>
+                  <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Placements</span>
+                </div>
+                <div className="h-10 w-px bg-slate-200" />
+                <div className="flex flex-col">
+                  <span className="text-2xl font-black text-slate-900">98%</span>
+                  <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">Success Rate</span>
+                </div>
               </div>
             </motion.div>
 
-            {/* Right Column: Dynamic Overlapping Image Grid */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              className="relative h-[600px] w-full hidden lg:block"
-            >
-              <div className="absolute top-0 right-0 w-[45%] h-[55%] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white z-10 hover:z-30 transition-all duration-500 hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800" alt="Paris" className="w-full h-full object-cover" />
-              </div>
+            {/* Hero Images Area */}
+            <div className="relative h-[650px] w-full hidden lg:block">
+              {/* Overlapping Rounded Cards with Professional Imagery */}
               <div className="absolute top-[20%] left-0 w-[55%] h-[45%] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white z-20 hover:z-30 transition-all duration-500 hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=800" alt="Beach" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" alt="Collaboration" className="w-full h-full object-cover" />
               </div>
               <div className="absolute bottom-0 right-[15%] w-[60%] h-[50%] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white z-10 hover:z-30 transition-all duration-500 hover:scale-105 bg-slate-100">
-                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800" alt="Travel Landscape" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Professional Meeting" className="w-full h-full object-cover" />
               </div>
-              
+
               {/* Floating Glass UI Element */}
-              <motion.div 
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="absolute top-1/2 left-[45%] -translate-x-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-xl border border-white p-4 rounded-2xl shadow-xl z-40 flex items-center gap-4"
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute top-[50%] right-0 translate-y-[-50%] p-6 bg-white/70 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-2xl z-40 max-w-[280px]"
               >
-                <div className="flex -space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden"><img src="https://i.pravatar.cc/100?img=1" alt="User" /></div>
-                  <div className="w-10 h-10 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden"><img src="https://i.pravatar.cc/100?img=2" alt="User" /></div>
-                  <div className="w-10 h-10 rounded-full bg-slate-200 border-2 border-white shadow-sm overflow-hidden"><img src="https://i.pravatar.cc/100?img=3" alt="User" /></div>
-                </div>
-                <div>
-                  <div className="flex text-amber-400 text-sm">
-                    <Star size={14} fill="currentColor" />
-                    <Star size={14} fill="currentColor" />
-                    <Star size={14} fill="currentColor" />
-                    <Star size={14} fill="currentColor" />
-                    <Star size={14} fill="currentColor" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Candidate" />
+                      </div>
+                    ))}
                   </div>
-                  <p className="text-xs font-bold text-slate-800">4.9/5 from 3k+ reviews</p>
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-2.5 h-2.5 bg-yellow-400 rounded-full" />)}
+                    </div>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">4.9/5 from 3k+ Hiring Managers</span>
+                  </div>
                 </div>
+                <h4 className="font-heading font-black text-slate-800 text-lg leading-tight">Helping you find the perfect elite match in days.</h4>
               </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services Section (Formerly Specialty Sectors) */}
+      <section id="services-grid" className="py-24 relative">
+        <div className="container px-6 mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+            <div className="max-w-xl">
+              <Badge className="mb-4 bg-accent/10 text-accent border-accent/20 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">Our Expertise</Badge>
+              <h2 className="text-4xl md:text-5xl font-black font-heading tracking-tight text-slate-900 leading-[1.1]">Premier Workforce <span className="text-accent underline decoration-slate-200 underline-offset-8">Solutions.</span></h2>
+            </div>
+            <p className="text-slate-500 max-w-sm mb-2 text-lg font-medium leading-relaxed">
+              We provide tailored recruitment strategies designed to match your organization with world-class professional talent.
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            <motion.div variants={fadeUpVariant} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group lg:hover:-translate-y-2 duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <Target size={28} />
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3 font-heading tracking-tight">Executive Search</h3>
+              <p className="text-slate-500 font-medium leading-relaxed mb-6">Strategic leadership acquisition for c-suite and high-impact roles.</p>
+              <Link href="/services#executive" className="text-accent font-black text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeUpVariant} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group lg:hover:-translate-y-2 duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <UserPlus size={28} />
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3 font-heading tracking-tight">Direct Hire</h3>
+              <p className="text-slate-500 font-medium leading-relaxed mb-6">Building permanent foundations with fully-vetted professional talent.</p>
+              <Link href="/services#direct" className="text-accent font-black text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeUpVariant} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group lg:hover:-translate-y-2 duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <Briefcase size={28} />
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3 font-heading tracking-tight">Contract Staffing</h3>
+              <p className="text-slate-500 font-medium leading-relaxed mb-6">Scale your operations with agile, specialized contract professionals.</p>
+              <Link href="/services#staffing" className="text-accent font-black text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeUpVariant} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group lg:hover:-translate-y-2 duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <BarChart size={28} />
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3 font-heading tracking-tight">HR Consulting</h3>
+              <p className="text-slate-500 font-medium leading-relaxed mb-6">Strategic insights into salary benchmarks and talent mapping.</p>
+              <Link href="/services#consult" className="text-accent font-black text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Industry Expertise Section (Restored) */}
+      <section id="sectors" className="py-24 relative bg-slate-50/50">
+        <div className="container px-6 mx-auto">
+          <Feature />
+        </div>
+      </section>
+
+      {/* Feature Section (Recruitment Methodology) */}
+      <section className="py-24">
+        <div className="container px-6 mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* For Candidates */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="bg-slate-900 p-12 rounded-[3.5rem] shadow-xl group hover:shadow-2xl transition-all cursor-pointer text-white">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 text-white flex items-center justify-center mb-8 group-hover:bg-white group-hover:text-accent transition-colors">
+                <Users className="w-8 h-8" />
+              </div>
+              <h3 className="text-3xl font-black font-heading mb-4 text-white">For Candidates</h3>
+              <p className="text-lg text-white/80 mb-8 font-medium">Submit your credentials to join our elite network and receive specialized career matchmaking.</p>
+            </motion.div>
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-start hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-slate-50 text-accent flex items-center justify-center mb-8 shadow-sm">
+                <BarChart size={32} />
+              </div>
+              <h3 className="text-3xl font-black text-slate-900 mb-4 font-heading tracking-tight">Market Intelligence</h3>
+              <p className="text-lg text-slate-500 leading-relaxed font-medium">We provide businesses with deep insights into salary benchmarks, talent availability, and hiring trends.</p>
+            </motion.div>
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-start hover:-translate-y-2 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-slate-50 text-accent flex items-center justify-center mb-8 shadow-sm">
+                <Briefcase size={32} />
+              </div>
+              <h3 className="text-3xl font-black text-slate-900 mb-4 font-heading tracking-tight">Scalable Solutions</h3>
+              <p className="text-lg text-slate-500 leading-relaxed font-medium">Whether you're a startup or an enterprise, our hiring solutions scale with your business's dynamic needs.</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 2. SERVICES SECTION */}
-      <section className="py-32 relative z-10 bg-white border-b border-slate-100">
-        <div className="container px-6 mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariant}
-            className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8"
-          >
-            <div>
-              <h2 className="text-accent text-sm tracking-widest uppercase mb-3 font-bold flex items-center gap-2"><div className="w-8 h-px bg-accent"></div> Why Choose Us</h2>
-              <h3 className="section-title text-4xl md:text-5xl mb-0 font-heading tracking-tight text-slate-900">Expertise & Trust.</h3>
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden bg-accent text-white selection:bg-white/20">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="container relative z-10 px-6 mx-auto text-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="max-w-4xl mx-auto flex flex-col items-center">
+            <h2 className="text-5xl lg:text-7xl font-black tracking-tighter mb-8 font-heading leading-tight text-white">Ready to Build Your <br />Elite Workforce?</h2>
+            <p className="text-xl lg:text-2xl text-white/90 mb-12 max-w-2xl font-medium text-white">Partner with Cerebro Workforce Solutions and find the professionals who will drive your business forward.</p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link href="/contact" className="px-12 py-6 bg-white text-accent font-black rounded-full hover:bg-slate-50 transition-all shadow-2xl text-xl flex items-center gap-2">
+                Hiring Now <UserPlus size={24} />
+              </Link>
             </div>
-            <p className="text-slate-500 max-w-md text-lg">We take the stress out of travel planning so you can focus on making memories. Here is what we offer.</p>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            <motion.div variants={fadeUpVariant} className="bg-slate-50 rounded-[2rem] p-10 border border-slate-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-accent mb-8">
-                <Compass size={32} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-2xl font-bold font-heading mb-4 text-slate-900">Tailored Itineraries</h3>
-              <p className="text-slate-500 leading-relaxed">Custom travel plans designed specifically for your preferences, budget, and travel style.</p>
-            </motion.div>
-            
-            <motion.div variants={fadeUpVariant} className="bg-slate-50 rounded-[2rem] p-10 border border-slate-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-accent mb-8">
-                <Globe size={32} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-2xl font-bold font-heading mb-4 text-slate-900">Flexible Booking</h3>
-              <p className="text-slate-500 leading-relaxed">Enjoy peace of mind with our flexible booking options and free cancellation on select packages.</p>
-            </motion.div>
-            
-            <motion.div variants={fadeUpVariant} className="bg-slate-50 rounded-[2rem] p-10 border border-slate-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-accent mb-8">
-                <Plane size={32} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-2xl font-bold font-heading mb-4 text-slate-900">24/7 Support</h3>
-              <p className="text-slate-500 leading-relaxed">Our dedicated travel experts are always on call to assist you before, during, and after your trip.</p>
-            </motion.div>
           </motion.div>
         </div>
       </section>
-
-      {/* 3. BENTO DESTINATIONS SECTION */}
-      <Feature />
-
-      {/* 4. TESTIMONIALS SECTION */}
-      <section className="py-32 relative z-10 bg-white">
-        <div className="container px-6 mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUpVariant}
-            className="text-center mb-16"
-          >
-            <h2 className="text-accent text-sm tracking-widest uppercase mb-3 font-bold font-sans">Reviews</h2>
-            <h3 className="section-title text-4xl md:text-5xl font-heading tracking-tight text-slate-900">What Our Clients Say.</h3>
-          </motion.div>
-
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            <motion.div variants={fadeUpVariant} className="bg-slate-50 p-10 rounded-[2rem] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all border border-slate-100/50">
-              <div className="opacity-70 mb-6"><MapPin size={24} className="text-accent"/></div>
-              <p className="italic mb-8 text-slate-600 text-lg">"Horizon Travel planned the perfect honeymoon for us. Everything from the flights to the private tours was seamless. Highly recommended!"</p>
-              <h4 className="font-bold text-slate-900 font-heading tracking-tight text-lg">- Sarah & James T.</h4>
-            </motion.div>
-            
-            <motion.div variants={fadeUpVariant} className="bg-slate-50 p-10 rounded-[2rem] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all border border-slate-100/50">
-              <div className="opacity-70 mb-6"><MapPin size={24} className="text-accent"/></div>
-              <p className="italic mb-8 text-slate-600 text-lg">"I wanted a solo backpacking trip through Europe but didn't know where to start. They created a custom itinerary that was exactly what I dreamed of."</p>
-              <h4 className="font-bold text-slate-900 font-heading tracking-tight text-lg">- Michael R.</h4>
-            </motion.div>
-            
-            <motion.div variants={fadeUpVariant} className="bg-slate-50 p-10 rounded-[2rem] shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all border border-slate-100/50">
-              <div className="opacity-70 mb-6"><MapPin size={24} className="text-accent"/></div>
-              <p className="italic mb-8 text-slate-600 text-lg">"Professional, responsive, and incredibly knowledgeable. We've booked three family vacations with them and they never disappoint."</p>
-              <h4 className="font-bold text-slate-900 font-heading tracking-tight text-lg">- The Garcia Family</h4>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 5. NEW CTA SECTION (EMERALD) */}
-      <section className="py-24 relative overflow-hidden bg-accent text-white border-t border-accent-hover">
-        {/* Soft geometric accent patterns */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[80px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-900/20 rounded-full blur-[60px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
-
-        <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUpVariant}
-            className="container relative z-10 flex flex-col items-center justify-center h-full px-6 mx-auto text-center"
-        >
-          <h2 className="mb-6 text-white text-5xl md:text-7xl font-black tracking-tighter font-heading">Ready to Explore?</h2>
-          <p className="mb-10 max-w-2xl text-xl text-white/90">Contact our experts today and get a free consultation for your next big adventure.</p>
-          <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-white text-accent font-bold h-14 px-10 text-lg hover:bg-slate-50 transition-all focus:ring-4 focus:ring-slate-200 shadow-lg group">
-            Start Your Journey <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
-      </section>
-    </div>
+    </main>
   );
 }
