@@ -5,14 +5,6 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, Send, Linkedin } from 'lucide-react';
 
 export default function ContactContent() {
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormState('submitting');
-    setTimeout(() => setFormState('success'), 1500);
-  };
-
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -93,41 +85,43 @@ export default function ContactContent() {
                 <h3 className="text-3xl font-black text-slate-900 mb-2 font-heading tracking-tight">Send a Message</h3>
                 <p className="text-slate-500 mb-10 font-medium">We'll get back to you within 24 hours.</p>
 
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form className="space-y-6" action="https://formsubmit.co/hello@cerebroworkforce.com" method="POST">
+                  {/* FormSubmit Configuration */}
+                  <input type="hidden" name="_subject" value="New Inquiry from Cerebro Website" />
+                  <input type="hidden" name="_template" value="box" />
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" required />
+                      <input type="text" name="name" placeholder="John Doe" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" required />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Company / Role</label>
-                      <input type="text" placeholder="E.g. Acme Tech / Senior Developer" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" />
+                      <input type="text" name="company_role" placeholder="E.g. Acme Tech / Senior Developer" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" required />
+                      <input type="email" name="email" placeholder="john@example.com" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" required />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Phone</label>
-                      <input type="tel" placeholder="+1 (555) 000-0000" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" />
+                      <input type="tel" name="phone" placeholder="+1 (555) 000-0000" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium" />
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Message</label>
-                    <textarea rows={4} placeholder="How can we help your business grow?" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium resize-none" required></textarea>
+                    <textarea name="message" rows={4} placeholder="How can we help your business grow?" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium resize-none" required></textarea>
                   </div>
 
                   <button
-                    disabled={formState !== 'idle'}
-                    className="w-full bg-accent hover:bg-accent-hover text-white font-black py-6 rounded-2xl transition-all shadow-lg shadow-accent/20 flex items-center justify-center gap-2 group text-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    type="submit"
+                    className="w-full bg-accent hover:bg-accent-hover text-white font-black py-6 rounded-2xl transition-all shadow-lg shadow-accent/20 flex items-center justify-center gap-2 group text-xl"
                   >
-                    {formState === 'idle' && <>Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>}
-                    {formState === 'submitting' && <span className="flex items-center gap-2"><div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Processing...</span>}
-                    {formState === 'success' && <span>Message Sent Successfully!</span>}
+                    Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </button>
                 </form>
               </div>
@@ -136,21 +130,7 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="container px-6 mx-auto pt-10">
-        <div className="rounded-[3rem] overflow-hidden shadow-2xl h-[450px] border border-slate-100 grayscale hover:grayscale-0 transition-all duration-700">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976373946229!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1684333200000!5m2!1sen!2sus"
-            title="Office Location"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </section>
+
     </div>
   );
 }
