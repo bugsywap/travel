@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { Phone, Mail, Send, Linkedin } from 'lucide-react';
 
 export default function ContactContent() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -37,27 +37,39 @@ export default function ContactContent() {
       <section className="py-20 relative z-10">
         <div className="container px-6 mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Contact Info */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-5 flex flex-col gap-8">
               <div>
                 <h2 className="text-accent text-sm tracking-widest uppercase mb-3 font-black flex items-center gap-2">
                   <div className="w-8 h-px bg-accent"></div> Recruitment Desk
                 </h2>
-                <h3 className="text-4xl font-black font-heading tracking-tight text-slate-900 mb-6">Let's Talk Talent.</h3>
+                <h3 className="text-4xl font-black font-heading tracking-tight text-slate-900 mb-6">Ready to simplify your hiring?</h3>
                 <p className="text-lg text-slate-500 mb-8 leading-relaxed font-medium">
-                  Our specialized recruitment consultants are available to help you build your elite workforce or curate your dream career path.
+                  Tell us what you need — and let Cerebro handle the rest. Whether it&#39;s one critical role or an entire team, we&#39;ll find the right people and deliver them ready to work.
                 </p>
               </div>
 
               <div className="grid gap-4">
                 <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-6 group hover:shadow-md transition-shadow">
                   <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
-                    <MapPin size={24} />
+                    <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Head Office</h4>
-                    <p className="text-slate-500 font-medium">123 Professional Way, Suite 789<br/>New York, NY 10001</p>
+                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Email</h4>
+                    <a href="mailto:hello@cerebroworkforce.com" className="text-slate-500 font-medium hover:text-accent transition-colors">hello@cerebroworkforce.com</a>
+                  </div>
+                </div>
+
+                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-6 group hover:shadow-md transition-shadow">
+                  <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
+                    <Linkedin size={24} />
+                  </div>
+                  <div className="overflow-hidden">
+                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">LinkedIn</h4>
+                    <a href="https://linkedin.com/company/cerebro-workforce" target="_blank" rel="noopener noreferrer" className="text-slate-500 font-medium hover:text-accent transition-colors truncate block max-w-[250px] sm:max-w-[300px] md:max-w-none">
+                      linkedin.com/company/cerebro-workforce
+                    </a>
                   </div>
                 </div>
 
@@ -66,28 +78,8 @@ export default function ContactContent() {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Direct Line</h4>
-                    <p className="text-slate-500 font-medium">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-6 group hover:shadow-md transition-shadow">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Email Inquiry</h4>
-                    <p className="text-slate-500 font-medium">solutions@cerebroworkforce.com</p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-6 group hover:shadow-md transition-shadow">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
-                    <Clock size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Business Hours</h4>
-                    <p className="text-slate-500 font-medium whitespace-nowrap">Mon-Fri: 9:00 AM - 6:00 PM<br/>Sat: 10:00 AM - 2:00 PM</p>
+                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Number</h4>
+                    <p className="text-slate-500 font-medium">+63 9456476613 / +63 9057122723</p>
                   </div>
                 </div>
               </div>
@@ -97,7 +89,7 @@ export default function ContactContent() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-7">
               <div className="bg-white p-12 rounded-[3.5rem] border border-slate-100 shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                
+
                 <h3 className="text-3xl font-black text-slate-900 mb-2 font-heading tracking-tight">Send a Message</h3>
                 <p className="text-slate-500 mb-10 font-medium">We'll get back to you within 24 hours.</p>
 
@@ -129,8 +121,8 @@ export default function ContactContent() {
                     <textarea rows={4} placeholder="How can we help your business grow?" className="bg-slate-50 border-none rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent transition-all font-medium resize-none" required></textarea>
                   </div>
 
-                  <button 
-                    disabled={formState !== 'idle'} 
+                  <button
+                    disabled={formState !== 'idle'}
                     className="w-full bg-accent hover:bg-accent-hover text-white font-black py-6 rounded-2xl transition-all shadow-lg shadow-accent/20 flex items-center justify-center gap-2 group text-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {formState === 'idle' && <>Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>}
@@ -147,14 +139,14 @@ export default function ContactContent() {
       {/* Map Section */}
       <section className="container px-6 mx-auto pt-10">
         <div className="rounded-[3rem] overflow-hidden shadow-2xl h-[450px] border border-slate-100 grayscale hover:grayscale-0 transition-all duration-700">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976373946229!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1684333200000!5m2!1sen!2sus" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976373946229!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1684333200000!5m2!1sen!2sus"
             title="Office Location"
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={true} 
-            loading="lazy" 
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>

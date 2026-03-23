@@ -24,7 +24,7 @@ function Feature() {
             
             {/* Technology & AI */}
             <div className="relative bg-muted rounded-[2.5rem] overflow-hidden min-h-[400px] lg:h-full lg:col-span-2 p-10 flex justify-end flex-col group shadow-lg border border-slate-100">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Technology & Innovation" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Technology & Innovation" className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent z-10" />
               <div className="relative z-20 flex flex-col">
                 <Database className="w-10 h-10 text-accent mb-4" />
@@ -37,7 +37,7 @@ function Feature() {
 
             {/* Healthcare */}
             <div className="relative bg-muted rounded-[2.5rem] overflow-hidden min-h-[400px] aspect-square lg:aspect-auto p-10 flex justify-end flex-col group shadow-lg border border-slate-100">
-              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Healthcare Excellence" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Healthcare Excellence" className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent z-10" />
               <div className="relative z-20 flex flex-col">
                 <Activity className="w-10 h-10 text-accent mb-4" />
@@ -50,7 +50,7 @@ function Feature() {
 
             {/* Finance */}
             <div className="relative bg-muted rounded-[2.5rem] overflow-hidden min-h-[400px] aspect-square lg:aspect-auto p-10 flex justify-end flex-col group shadow-lg border border-slate-100">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="Finance & Banking" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" alt="Finance & Banking" className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent z-10" />
               <div className="relative z-20 flex flex-col">
                 <DollarSign className="w-10 h-10 text-accent mb-4" />
@@ -63,7 +63,7 @@ function Feature() {
 
             {/* Engineering */}
             <div className="relative bg-muted rounded-[2.5rem] overflow-hidden min-h-[400px] lg:h-full lg:col-span-2 p-10 flex justify-end flex-col group shadow-lg border border-slate-100">
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200" alt="Strategic Engineering" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200" alt="Strategic Engineering" className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent z-10" />
               <div className="relative z-20 flex flex-col">
                 <Hammer className="w-10 h-10 text-accent mb-4" />

@@ -29,7 +29,7 @@ export default function Card({
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+            className="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" 
           />
         </div>
       )}

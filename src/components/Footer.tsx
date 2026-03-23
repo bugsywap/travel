@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, MapPin, Phone, Mail, PlaneTakeoff, ArrowRight } from "lucide-react";
+import { Linkedin, Phone, Mail, ArrowRight } from "lucide-react";
 import "./Footer.css";
 
 export default function Footer() {
@@ -47,17 +47,13 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
               <h4 className="font-bold text-slate-900 tracking-wide uppercase text-sm mb-2">Contact</h4>
-              <div className="flex items-center gap-3 text-slate-500">
+              <div className="flex items-center gap-3 text-slate-500 hover:text-accent transition-colors">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <span>solutions@cerebroworkforce.com</span>
+                <a href="mailto:hello@cerebroworkforce.com">hello@cerebroworkforce.com</a>
               </div>
               <div className="flex items-center gap-3 text-slate-500">
                 <Phone size={18} className="text-accent flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-start gap-3 text-slate-500 mt-2">
-                <MapPin size={18} className="text-accent flex-shrink-0 mt-1" />
-                <span>123 Professional Way,<br />New York, NY 10001</span>
+                <span>+63 9456476613 / +63 9057122723</span>
               </div>
             </div>
           </div>
@@ -76,9 +72,7 @@ export default function Footer() {
           <p className="text-slate-400 text-sm">&copy; {new Date().getFullYear()} Cerebro Workforce Solutions. All rights reserved.</p>
 
           <div className="flex items-center gap-4">
-            <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#eff6ff] hover:text-accent transition-colors"><Facebook size={18} /></a>
-            <a href="#" aria-label="Twitter" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#eff6ff] hover:text-[#3b82f6] transition-colors"><Twitter size={18} /></a>
-            <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-pink-50 hover:text-pink-600 transition-colors"><Instagram size={18} /></a>
+            <a href="https://linkedin.com/company/cerebro-workforce" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#eff6ff] hover:text-[#0077b5] transition-colors"><Linkedin size={18} /></a>
           </div>
         </div>
       </div>

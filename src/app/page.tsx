@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Connect with top-tier professional talent in Tech, Healthcare, Finance, and Engineering. Cerebro Workforce Solutions is your partner for elite recruitment and strategic staffing.",
   openGraph: {
     title: "Cerebro Workforce Solutions | Elite Recruitment Agency",
-    description: "Bridging the gap between visionary companies and top-tier professionals. Voted #1 recruitment agency 2026.",
+    description: "Bridging the gap between visionary companies and top-tier professionals. Intelligent Workforce Solutions for Modern Businesses.",
     url: "https://cerebroworkforce.com",
   },
 };
