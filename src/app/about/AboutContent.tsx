@@ -277,7 +277,7 @@ export default function AboutContent() {
                     <div className="absolute -right-4 -bottom-10 text-[180px] font-black font-heading text-slate-100/50 group-hover:text-accent/5 transition-colors duration-500 select-none pointer-events-none z-0">
                       {item.id}
                     </div>
-                    
+
                     <div className="relative z-10 flex flex-col h-full">
                       <div className="w-16 h-16 rounded-2xl bg-slate-50 text-slate-400 flex items-center justify-center mb-8 border border-slate-100 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm">
                         <Icon size={32} strokeWidth={1.5} />
@@ -294,20 +294,20 @@ export default function AboutContent() {
 
             {/* The "Partner" Quote */}
             <motion.div variants={fadeUpVariant} className="relative max-w-5xl mx-auto w-full">
-               <div className="absolute -top-12 -left-8 md:-top-16 md:-left-12 text-accent/10 z-0">
-                  <Quote size={120} className="transform rotate-180" />
-               </div>
-               <div className="bg-slate-900 rounded-[3rem] p-12 md:p-16 lg:p-20 relative overflow-hidden shadow-2xl">
-                 <div className="absolute top-0 right-0 w-80 h-80 bg-accent/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-                 
-                 <p className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-relaxed font-heading tracking-tight italic">
-                   &ldquo;At Cerebro, we don't just fill roles, we show up like a partner. Like a Bro who's got your back, understands your business, and won't stop until the right person is in the right seat.&rdquo;
-                 </p>
-                 <div className="relative z-10 mt-10 flex items-center gap-4">
-                   <div className="h-px bg-white/20 w-16" />
-                   <span className="text-accent font-black uppercase tracking-widest text-sm">The Cerebro Promise</span>
-                 </div>
-               </div>
+              <div className="absolute -top-12 -left-8 md:-top-16 md:-left-12 text-accent/10 z-0">
+                <Quote size={120} className="transform rotate-180" />
+              </div>
+              <div className="bg-slate-900 rounded-[3rem] p-12 md:p-16 lg:p-20 relative overflow-hidden shadow-2xl">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-accent/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+                <p className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-relaxed font-heading tracking-tight italic">
+                  &ldquo;We show up, we deliver, and we've got your back. Every hire. Every time. That's cereBRO&rdquo;
+                </p>
+                <div className="relative z-10 mt-10 flex items-center gap-4">
+                  <div className="h-px bg-white/20 w-16" />
+                  <span className="text-accent font-black uppercase tracking-widest text-sm">The Cerebro Promise</span>
+                </div>
+              </div>
             </motion.div>
 
           </motion.div>

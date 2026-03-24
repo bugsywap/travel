@@ -37,10 +37,10 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4">
               <h4 className="font-bold text-slate-900 tracking-wide uppercase text-sm mb-2">Solutions</h4>
-              <Link href="/services#direct" className="text-slate-500 hover:text-accent transition-colors">Direct Hire</Link>
-              <Link href="/services#executive" className="text-slate-500 hover:text-accent transition-colors">Executive Search</Link>
-              <Link href="/services#staffing" className="text-slate-500 hover:text-accent transition-colors">Staffing Solutions</Link>
-              <Link href="/services#consult" className="text-slate-500 hover:text-accent transition-colors">HR Consulting</Link>
+              <Link href="/services#permanent" className="text-slate-500 hover:text-accent transition-colors">Permanent Placement</Link>
+              <Link href="/services#contract" className="text-slate-500 hover:text-accent transition-colors">Contract Staffing</Link>
+              <Link href="/services#virtual" className="text-slate-500 hover:text-accent transition-colors">Virtual Workforce</Link>
+              <Link href="/services#talent" className="text-slate-500 hover:text-accent transition-colors">Talent Sourcing</Link>
             </div>
 
             <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
