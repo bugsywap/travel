@@ -15,7 +15,6 @@ export function Header() {
 	const links = [
 		{ label: 'About', href: '/about' },
 		{ label: 'Services', href: '/services' },
-		{ label: 'Inquiry', href: '/inquiry' },
 		{ label: 'Contact', href: '/contact' },
 	];
 
@@ -75,7 +74,7 @@ export function Header() {
 
 				{/* Right CTA */}
 				<div className="flex-1 flex justify-end items-center gap-3 hidden md:flex">
-					<Link href="/booking" className={cn(buttonVariants({ variant: 'default' }), "rounded-full bg-accent hover:bg-accent-hover shadow-md px-6 text-white font-bold")}>
+					<Link href="/contact" className={cn(buttonVariants({ variant: 'default' }), "rounded-full bg-accent hover:bg-accent-hover shadow-md px-6 text-white font-bold")}>
 						Book Appointment
 					</Link>
 				</div>
@@ -114,10 +113,7 @@ export function Header() {
 						})}
 					</div>
 					<div className="flex flex-col gap-3 mt-4">
-						<Link href="/inquiry" onClick={() => setOpen(false)} className={cn(buttonVariants({ variant: 'outline' }), "w-full py-6 rounded-2xl text-lg border-slate-200")}>
-							General Inquiry
-						</Link>
-						<Link href="/booking" onClick={() => setOpen(false)} className={cn(buttonVariants({ variant: 'default' }), "w-full py-6 rounded-2xl text-lg bg-accent text-white hover:bg-accent-hover font-bold")}>
+						<Link href="/contact" onClick={() => setOpen(false)} className={cn(buttonVariants({ variant: 'default' }), "w-full py-6 rounded-2xl text-lg bg-accent text-white hover:bg-accent-hover font-bold")}>
 							Book Appointment
 						</Link>
 					</div>
