@@ -28,11 +28,11 @@ export default function ContactContent() {
 
       <section className="py-24 relative z-10 bg-slate-50 border-b border-slate-100">
         <div className="container px-6 mx-auto">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
-            {/* Contact Info & Value Props */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-5 flex flex-col gap-10">
-
+            {/* 1. Intro & Value Props */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-5 lg:col-start-1 lg:row-start-1 order-1 flex flex-col gap-10">
+              
               <div>
                 <h2 className="text-accent text-sm tracking-widest uppercase mb-4 font-black flex items-center gap-3">
                   <div className="w-10 h-px bg-accent"></div> Recruitment Desk
@@ -66,8 +66,11 @@ export default function ContactContent() {
                 </div>
               </div>
 
+            </motion.div>
+
+            {/* 3. Classic Contact Info (Mobile Bottom, Desktop Row 2) */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-5 lg:col-start-1 lg:row-start-2 order-3 grid gap-4 w-full">
               {/* Classic Contact Info */}
-              <div className="grid gap-4">
                 <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-6 group hover:shadow-lg transition-all hover:-translate-y-1">
                   <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors border border-accent/10">
                     <Mail size={24} />
@@ -99,11 +102,10 @@ export default function ContactContent() {
                     <p className="text-slate-500 font-medium">+639455127156 / +639057122723</p>
                   </div>
                 </div>
-              </div>
             </motion.div>
 
-            {/* Global Contact Form */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-7">
+            {/* 2. Global Contact Form */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2 order-2 w-full">
               <div className="bg-white p-12 lg:p-16 rounded-[3rem] border border-slate-100 shadow-2xl relative overflow-hidden h-full">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/3" />
 

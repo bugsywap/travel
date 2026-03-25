@@ -3,11 +3,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Users, Briefcase, BarChart, Target, Building, Globe, Search, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowRight, Users, Briefcase, BarChart, Target, Building, Globe, Search, CheckCircle2, ChevronRight, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomeContent() {
   const [activeTalentTab, setActiveTab] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 30 },
@@ -187,55 +188,107 @@ export default function HomeContent() {
             <p className="text-slate-500 text-lg font-medium">Select an area of expertise to see our deep specialization.</p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start max-w-7xl mx-auto">
-            {/* Tabs List */}
-            <div className="lg:col-span-5 flex flex-col gap-4">
+          <div className="max-w-6xl mx-auto flex flex-col items-center">
+            
+            {/* 1. Mobile Dropdown (< md) */}
+            <div className="w-full block md:hidden mb-8 relative z-30">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="w-full bg-white border-2 border-slate-200 rounded-2xl p-5 flex items-center justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus:border-accent outline-none hover:border-accent/50 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-accent text-white flex items-center justify-center">
+                    {React.cloneElement(talentData[activeTalentTab].icon as React.ReactElement<any>, { size: 20 })}
+                  </div>
+                  <span className="font-black text-slate-900 text-lg">{talentData[activeTalentTab].title}</span>
+                </div>
+                <div className={`transition-transform duration-300 text-accent bg-accent/10 p-1.5 rounded-lg border border-accent/20 ${isMobileMenuOpen ? 'rotate-180' : ''}`}>
+                  <ChevronDown size={20} />
+                </div>
+              </button>
+              
+              <AnimatePresence>
+                {isMobileMenuOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-[calc(100%+0.5rem)] left-0 w-full bg-white border-2 border-slate-200 shadow-2xl rounded-2xl overflow-hidden z-50 flex flex-col origin-top"
+                  >
+                    {talentData.map((tab, idx) => (
+                      <button 
+                        key={idx}
+                        onClick={() => { setActiveTab(idx); setIsMobileMenuOpen(false); }}
+                        className={`flex items-center gap-4 p-5 text-left transition-colors border-b border-slate-100 last:border-0 hover:bg-slate-50 relative`}
+                      >
+                         {activeTalentTab === idx && <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-accent" />}
+                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${activeTalentTab === idx ? 'bg-accent text-white' : 'bg-slate-100 text-slate-400'}`}>
+                           {React.cloneElement(tab.icon as React.ReactElement<any>, { size: 20 })}
+                         </div>
+                         <div>
+                           <span className={`block font-black text-lg ${activeTalentTab === idx ? 'text-slate-900' : 'text-slate-600'}`}>{tab.title}</span>
+                         </div>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* 2. Desktop & Tablet Pill Tabs (md+) */}
+            <div className="hidden md:flex bg-slate-100/80 backdrop-blur-md p-2 rounded-[2rem] mb-12 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] border border-slate-200/60 relative z-20 w-fit mx-auto overflow-x-auto hide-scrollbar">
               {talentData.map((tab, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveTab(idx)}
-                  className={`text-left p-6 rounded-3xl border-2 transition-all duration-300 flex items-center justify-between group ${
-                    activeTalentTab === idx 
-                      ? 'bg-slate-50 border-accent shadow-xl' 
-                      : 'bg-white border-slate-100 hover:border-slate-300'
-                  }`}
+                  className={`relative flex items-center gap-3 px-8 py-4 transition-all duration-500 font-bold whitespace-nowrap outline-none rounded-2xl flex-shrink-0`}
                 >
-                  <div className="flex items-center gap-6">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors ${activeTalentTab === idx ? 'bg-accent text-white shadow-lg' : 'bg-slate-100 text-slate-400'}`}>
-                      {tab.icon}
-                    </div>
-                    <div>
-                      <h3 className={`font-black text-lg uppercase tracking-wide ${activeTalentTab === idx ? 'text-accent' : 'text-slate-700'}`}>{tab.title}</h3>
-                      <p className={`text-sm mt-1 font-medium ${activeTalentTab === idx ? 'text-slate-600' : 'text-slate-400'}`}>{tab.shortDesc}</p>
-                    </div>
+                  {/* Sliding Background */}
+                  {activeTalentTab === idx && (
+                    <motion.div
+                      layoutId="activePillTab"
+                      className="absolute inset-0 bg-white shadow-md border border-slate-200/50 rounded-2xl"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                  <div className={`relative z-10 transition-colors duration-500 flex-shrink-0 ${activeTalentTab === idx ? "text-accent" : "text-slate-400 group-hover:text-slate-600"}`}>
+                    {React.cloneElement(tab.icon as React.ReactElement<any>, { size: 22 })}
                   </div>
-                  <ChevronRight size={24} className={`transition-transform text-accent ${activeTalentTab === idx ? 'translate-x-1 opacity-100' : 'opacity-0 group-hover:opacity-50'}`} />
+                  <span className={`relative z-10 text-base lg:text-lg tracking-wide transition-colors duration-500 ${activeTalentTab === idx ? 'text-accent' : 'text-slate-500 group-hover:text-slate-700'}`}>{tab.title}</span>
                 </button>
               ))}
             </div>
 
-            {/* Tab Content Display */}
-            <div className="lg:col-span-7">
+            {/* Content Display (Full Width below tabs) */}
+            <div className="w-full bg-white rounded-[2rem] lg:rounded-[3rem] overflow-hidden border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative z-0">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTalentTab}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-slate-50 rounded-[3rem] overflow-hidden border border-slate-200 shadow-xl relative h-full flex flex-col"
+                  initial={{ opacity: 0, scale: 0.98, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.98, y: -15 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="flex flex-col lg:flex-row h-full min-h-[450px]"
                 >
-                  <div className="h-64 relative overflow-hidden">
-                    <img src={talentData[activeTalentTab].img} alt={talentData[activeTalentTab].title} className="w-full h-full object-cover" />
+                  {/* Image Side */}
+                  <div className="w-full lg:w-1/2 relative overflow-hidden bg-slate-900 border-b lg:border-b-0 lg:border-r border-slate-100 min-h-[250px] sm:min-h-[350px] lg:min-h-full">
+                    <img src={talentData[activeTalentTab].img} alt={talentData[activeTalentTab].title} className="w-full h-full object-cover opacity-90 lg:hover:scale-105 transition-transform duration-[2s]" />
+                    {/* Inner Gradient for blending */}
+                    <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white w-[101%]" />
                   </div>
                   
-                  <div className="p-10 flex-grow bg-white border-t border-slate-100">
-                    <h4 className="text-3xl font-black font-heading text-slate-900 mb-8 border-b border-slate-100 pb-6">{talentData[activeTalentTab].title} Roles</h4>
+                  {/* Content Side */}
+                  <div className="w-full lg:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-white relative">
+                    <h4 className="text-3xl lg:text-5xl font-black font-heading tracking-tight text-slate-900 mb-4">{talentData[activeTalentTab].title} Roles</h4>
+                    <p className="text-lg text-slate-500 mb-8 font-medium border-b border-slate-100 pb-8 leading-relaxed">{talentData[activeTalentTab].shortDesc}</p>
                     <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
                       {talentData[activeTalentTab].bullets.map((bullet, i) => (
-                        <li key={i} className="flex items-start gap-4">
-                          <CheckCircle2 size={24} className="text-accent flex-shrink-0" />
-                          <span className="text-slate-600 text-base font-semibold leading-relaxed">{bullet}</span>
+                        <li key={i} className="flex items-start gap-4 relative group">
+                           <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-accent transition-all text-accent group-hover:text-white border border-accent/10 group-hover:border-accent">
+                             <CheckCircle2 size={16} />
+                           </div>
+                           <span className="text-slate-700 text-base font-bold leading-relaxed mt-0.5">{bullet}</span>
                         </li>
                       ))}
                     </ul>
@@ -292,29 +345,32 @@ export default function HomeContent() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-24 items-center">
             {/* Visual */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="order-2 md:order-1 relative h-[500px] lg:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50">
-               <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200" alt="Process" className="w-full h-full object-cover" />
-               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-               <div className="absolute bottom-10 left-10 right-10">
-                 <p className="text-white text-2xl md:text-3xl font-black font-heading leading-snug italic block border-l-4 border-accent pl-6">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="w-full lg:col-span-6 order-1 relative h-[450px] md:h-[500px] lg:h-[600px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border-4 border-slate-50">
+               <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200" alt="Process" className="w-full h-full object-cover lg:hover:scale-105 transition-transform duration-[2s]" />
+               {/* Base Darkening Overlay */}
+               <div className="absolute inset-0 bg-slate-900/40" />
+               {/* Aggressive Bottom Gradient for text contrast */}
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
+               <div className="absolute bottom-8 lg:bottom-10 left-6 lg:left-10 right-6 lg:right-10">
+                 <p className="text-white text-[1.35rem] md:text-3xl font-black font-heading leading-snug italic block border-l-4 border-accent pl-5 md:pl-6">
                    "We prioritize the right fit over speed. Every placement is intentional."
                  </p>
                </div>
             </motion.div>
             
             {/* Features */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="order-1 md:order-2 flex flex-col gap-12">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="w-full lg:col-span-6 order-2 flex flex-col gap-6 lg:gap-12">
               {[
                 { icon: <Target size={28} />, title: "Precision Focusing", desc: "We focus exclusively on roles requiring intelligence and functional depth, ensuring true alignment." },
                 { icon: <Search size={28} />, title: "Function-Aware Screening", desc: "Candidates are evaluated for real business understanding and capability, not just resume keywords." },
                 { icon: <Users size={28} />, title: "Intelligence-First Hiring", desc: "Skills, mindset, and adaptability are evaluated at the core of every rigorous assessment we perform." }
               ].map((adv, idx) => (
-                <div key={idx} className="flex gap-6 items-start">
-                  <div className="mt-1 w-16 h-16 rounded-2xl bg-accent/5 border border-accent/10 text-accent shadow-sm flex items-center justify-center flex-shrink-0">{adv.icon}</div>
+                <div key={idx} className="flex flex-col sm:flex-row gap-5 sm:gap-6 items-start bg-slate-50 sm:bg-white lg:bg-transparent p-8 lg:p-0 rounded-[2rem] lg:rounded-none border border-slate-100 lg:border-transparent shadow-sm lg:shadow-none hover:shadow-xl lg:hover:shadow-none transition-all group hover:-translate-y-1 lg:hover:-translate-y-0">
+                  <div className="mt-1 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-accent lg:bg-accent/5 lg:border border-accent/10 text-white lg:text-accent shadow-lg lg:shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 lg:group-hover:scale-100 transition-transform duration-500">{adv.icon}</div>
                   <div>
-                    <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight font-heading">{adv.title}</h3>
+                    <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight font-heading group-hover:text-accent transition-colors">{adv.title}</h3>
                     <p className="text-lg text-slate-500 font-medium leading-relaxed">{adv.desc}</p>
                   </div>
                 </div>
