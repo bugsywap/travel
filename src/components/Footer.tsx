@@ -47,7 +47,7 @@ export default function Footer() {
               <h4 className="font-bold text-slate-900 tracking-wide uppercase text-sm mb-2">Contact</h4>
               <div className="flex items-center gap-3 text-slate-500 hover:text-accent transition-colors">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <a href="mailto:corporate@cerebroworkforcesolution.com ">corporate@cerebroworkforcesolution.com </a>
+                <a href="mailto:corporate@cerebroworkforcesolutions.com">corporate@cerebroworkforcesolutions.com</a>
               </div>
               <div className="flex items-center gap-3 text-slate-500">
                 <Phone size={18} className="text-accent flex-shrink-0" />

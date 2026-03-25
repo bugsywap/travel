@@ -72,12 +72,12 @@ export default function ContactContent() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-5 lg:col-start-1 lg:row-start-2 order-3 grid gap-4 w-full">
               {/* Classic Contact Info */}
                 <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm flex items-start gap-6 group hover:shadow-lg transition-all hover:-translate-y-1">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors border border-accent/10">
+                  <div className="w-12 h-12 rounded-xl bg-accent/5 text-accent flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="font-black text-slate-900 mb-1 font-heading text-lg">Email</h4>
-                    <a href="mailto:corporate@cerebroworkforcesolution.com " className="text-slate-500 font-medium hover:text-accent transition-colors">corporate@cerebroworkforcesolution.com </a>
+                    <h4 className="text-lg font-black text-slate-900 group-hover:text-accent transition-colors">E-Mail</h4>
+                    <a href="mailto:corporate@cerebroworkforcesolutions.com" className="text-slate-500 font-medium hover:text-accent transition-colors">corporate@cerebroworkforcesolutions.com</a>
                   </div>
                 </div>
 
@@ -106,16 +106,18 @@ export default function ContactContent() {
 
             {/* 2. Global Contact Form */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2 order-2 w-full">
-              <div className="bg-white p-12 lg:p-16 rounded-[3rem] border border-slate-100 shadow-2xl relative overflow-hidden h-full">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-
+              <div className="bg-white p-8 md:p-12 lg:p-16 rounded-[2.5rem] lg:rounded-[3rem] border border-slate-100 shadow-2xl relative overflow-hidden h-full group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-accent/10 transition-colors duration-700 pointer-events-none" />
+                
                 <h3 className="text-3xl font-black text-slate-900 mb-3 font-heading tracking-tight relative z-10">Send a Message or Request a Meeting</h3>
                 <p className="text-slate-500 mb-10 font-medium text-lg relative z-10">Specify your request below and we will get back to you within 24 hours to fulfill it.</p>
 
-                <form className="space-y-6 relative z-10" action="https://formsubmit.co/hello@cerebroworkforce.com" method="POST">
-                  {/* FormSubmit Configuration */}
+                <form className="space-y-6 relative z-10" action="https://formsubmit.co/corporate@cerebroworkforcesolutions.com" method="POST">
+                  
+                  {/* Honeypot */}
                   <input type="hidden" name="_subject" value="New Inquiry/Booking Request from Cerebro Website" />
                   <input type="hidden" name="_template" value="box" />
+                  <input type="hidden" name="_cc" value="adrianetecson@gmail.com" />
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
