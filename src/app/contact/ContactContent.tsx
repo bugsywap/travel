@@ -1,10 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Send, Linkedin, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, Mail, Clock, CheckCircle2, Building, ChevronDown, Calendar, Linkedin, Send } from 'lucide-react';
+import { COUNTRIES } from '@/lib/countries';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 export default function ContactContent() {
+  const [phoneNumber, setPhoneNumber] = useState<string | undefined>();
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -135,9 +139,22 @@ export default function ContactContent() {
                       <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Email Address</label>
                       <input type="email" name="email" placeholder="john@example.com" className="bg-slate-50 border border-slate-200/60 rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent focus:border-accent transition-all font-medium" required />
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 relative">
                       <label className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Phone</label>
-                      <input type="tel" name="phone" placeholder="+1 (555) 000-0000" className="bg-slate-50 border border-slate-200/60 rounded-2xl p-5 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-accent focus:border-accent transition-all font-medium" />
+                      <div className="bg-slate-50 border border-slate-200/60 rounded-2xl focus-within:ring-2 focus-within:ring-accent focus-within:border-accent transition-all overflow-hidden px-4">
+                        <PhoneInput
+                          international
+                          defaultCountry="US"
+                          name="phone"
+                          value={phoneNumber}
+                          onChange={setPhoneNumber}
+                          className="py-5 w-full flex items-center"
+                          numberInputProps={{
+                            className: "bg-transparent border-none py-0 px-4 text-slate-900 placeholder:text-slate-400 focus:ring-0 outline-none w-full font-medium",
+                            required: true
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
 
